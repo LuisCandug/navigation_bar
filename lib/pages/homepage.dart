@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/pages/home.dart';
+import 'package:flutter_application_1/pages/profile.dart';
+import 'package:flutter_application_1/pages/setting.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -16,6 +19,9 @@ class _HomepageState extends State<Homepage> {
     });
 
   }
+  final List<Widget> pages = [
+    Home(), Profile(), Setting()
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -32,11 +38,7 @@ class _HomepageState extends State<Homepage> {
       
       ),
       body: Center(
-        child: Column(
-          children: [
-            Text('HomePage'),
-          ],
-        ),
+        child: pages[selected],
       ),
     );
   }
